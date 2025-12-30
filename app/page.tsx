@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import { getWorkExperience } from '@/lib/experience'
+import { getEducation } from '@/lib/education'
 
 export default function Home() {
   const experiences = getWorkExperience()
+  const education = getEducation()
 
   return (
     <div className="container">
@@ -26,7 +28,7 @@ export default function Home() {
           <div className="about-links">
             <a href="https://github.com/dawit-bonga" target="_blank" rel="noopener noreferrer">GitHub</a>
             <span style={{ color: '#ccc' }}>•</span>
-            <a href="https://linkedin.com/dawit-bonga" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/dawit-bonga" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </aside>
 
@@ -57,6 +59,47 @@ export default function Home() {
               )}
             </div>
           ))}
+
+          {education.length > 0 && (
+            <>
+              <h2 style={{ marginTop: '60px' }}>Education</h2>
+              {education.map((edu, index) => (
+                <div key={index} className="experience-item">
+                  <div className="experience-header">
+                    <div>
+                      <div className="experience-title">{edu.degree}</div>
+                      <div className="experience-company">{edu.school}</div>
+                    </div>
+                    <div className="experience-date">{edu.date}</div>
+                  </div>
+                  {edu.gpa && (
+                    <div style={{ marginTop: '8px', fontSize: '14px', color: 'var(--text-secondary)' }}>
+                      GPA: {edu.gpa}
+                    </div>
+                  )}
+                  {edu.description && edu.description.length > 0 && (
+                    <div className="experience-description">
+                      <ul>
+                        {edu.description.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {edu.coursework && edu.coursework.length > 0 && (
+                    <div className="experience-description" style={{ marginTop: edu.description && edu.description.length > 0 ? '15px' : '0' }}>
+                      <div style={{ fontSize: '14px', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                        <strong>Relevant Coursework:</strong>
+                      </div>
+                      <div style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                        {edu.coursework.join(' • ')}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </>
+          )}
         </main>
       </div>
     </div>
