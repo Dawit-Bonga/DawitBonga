@@ -275,6 +275,16 @@ p {
   height: fit-content;
 }
 
+@media (max-width: 768px) {
+  .about-section {
+    position: static !important;
+    top: auto;
+    background-color: var(--bg-color);
+    z-index: 1;
+    margin-bottom: 40px;
+  }
+}
+
 .about-name {
   font-size: 32px;
   font-weight: 300;
