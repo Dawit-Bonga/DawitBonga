@@ -18,17 +18,22 @@ export default function Home() {
         <aside className="about-section">
           <h1 className="about-name">Dawit Bonga</h1>
           <p className="about-bio">
-            I'm a developer focused on building clean, efficient solutions. 
-            I enjoy working on projects that make a difference and learning 
-            new technologies along the way.
+            I'm a Sophmore at Yale University Studying Computer Science with a minor in data science.
+            I'm interested in Machine Learning and AI, espcially in how we can intergate them to help in areas such as healthcare and
+            education. I enjoy working on projects that make a difference and learning new technologies along the way. Please reach out to me if you want to connect,
+            I am always open.
           </p>
-          <div className="about-contact">
-            dawitbonga0@gmail.com
-          </div>
+<div className="about-contact">
+  <a href="mailto:dawitbonga0@gmail.com">
+    dawitbonga0@gmail.com
+  </a>
+</div>
           <div className="about-links">
             <a href="https://github.com/dawit-bonga" target="_blank" rel="noopener noreferrer">GitHub</a>
             <span style={{ color: '#ccc' }}>•</span>
             <a href="https://www.linkedin.com/in/dawit-bonga" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            {/* <span style={{ color: '#ccc' }}>•</span>
+            <a href="/DawitResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a> */}
           </div>
         </aside>
 
